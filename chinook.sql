@@ -27,7 +27,14 @@ ON cust.CustomerID = inv.CustomerId
 WHERE cust.Country = 'Brazil';
 
 -- Show the Employees who are Sales Agents.
+SELECT *
+FROM employees
+WHERE Title = 'Sales Support Agent'
+
 -- Find a unique/distinct list of billing countries from the Invoice table.
+SELECT DISTINCT BillingCountry
+FROM invoices;
+
 -- Provide a query that shows the invoices associated with each sales agent. The resulting table should include 
     --the Sales Agent's full name.
 -- Show the Invoice Total, Customer name, Country, and Sales Agent name for all invoices and customers.
