@@ -1,5 +1,11 @@
 -- Show Customers (their full names, customer ID, and country) who are not in the US. (Hint: != or <> can be 
     -- used to say "is not equal to").
+SELECT
+    FirstName || ' ' || LastName AS Name, -- || concatenates 2 strings instead of using CONCAT()
+    CustomerId,
+    Country
+FROM chinook.customers
+WHERE country != 'USA';
 -- Show only the Customers from Brazil.
 -- Find the Invoices of customers who are from Brazil. The resulting table should show the customer's full name, 
     -- Invoice ID, Date of the invoice, and billing country.
