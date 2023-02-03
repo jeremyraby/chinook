@@ -62,6 +62,10 @@ LEFT JOIN employees
 ON customers.SupportRepId = employees.EmployeeId
 
 -- How many Invoices were there in 2009?
+SELECT COUNT(InvoiceDate)
+FROM invoices
+WHERE InvoiceDate LIKE '2009%';
+
 -- What are the total sales for 2009?
 -- Write a query that includes the purchased track name with each invoice line ID.
 -- Write a query that includes the purchased track name AND artist name with each invoice line ID.
