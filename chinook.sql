@@ -81,6 +81,19 @@ ON items.TrackId = tracks.TrackId
 ORDER BY items.InvoiceLineID;
 
 -- Write a query that includes the purchased track name AND artist name with each invoice line ID.
+SELECT
+    tracks.Name AS 'Track',
+    artists.Name AS 'Artist',
+    invoice_items.InvoiceLineId AS 'Invoice Line ID'
+FROM tracks
+JOIN invoice_items
+ON invoice_items.TrackId = tracks.TrackId
+JOIN albums
+ON tracks.AlbumId = albums.AlbumId
+JOIN artists
+ON albums.ArtistId = artists.ArtistId
+ORDER BY 3;
+
 -- Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre.
 -- Show the total sales made by each sales agent.
 -- Which sales agent made the most dollars in sales in 2009?
