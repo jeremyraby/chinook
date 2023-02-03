@@ -36,7 +36,18 @@ SELECT DISTINCT BillingCountry
 FROM invoices;
 
 -- Provide a query that shows the invoices associated with each sales agent. The resulting table should include 
-    --the Sales Agent's full name.
+    -- the Sales Agent's full name.
+-- need to join invoices, employees, and customers tables
+    -- customers.SupportRepId, employees.LastName & employees.FirstName, invoices.InvoiceId
+
+SELECT
+    employees.FirstName ||' ' || employees.LastName AS 'Sales Rep',
+    invoices.InvoiceId AS 'Invoice ID'
+FROM employees
+JOIN customers
+ON employees.EmployeeId = customers.SupportRepId
+JOIN invoices
+ON invoices.CustomerId = customers.CustomerId;
 -- Show the Invoice Total, Customer name, Country, and Sales Agent name for all invoices and customers.
 -- How many Invoices were there in 2009?
 -- What are the total sales for 2009?
