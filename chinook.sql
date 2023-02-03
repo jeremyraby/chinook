@@ -121,3 +121,14 @@ GROUP BY 1
 ORDER BY 2 DESC;
 
 -- Which sales agent made the most dollars in sales in 2009?
+SELECT
+    employees. FirstName || ' ' || employees.LastName AS 'Sales Agent',
+    ROUND(SUM(invoices.Total), 2) AS 'Total Sales'
+FROM customers
+JOIN employees
+ON customers.SupportRePId = employees.EmployeeId
+JOIN invoices
+ON invoices.CustomerId = customers.CustomerId
+WHERE invoices.InvoiceDate LIKE '2009%'
+GROUP BY 1
+ORDER BY 2 DESC;
