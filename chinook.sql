@@ -126,7 +126,7 @@ SELECT
     ROUND(SUM(invoices.Total), 2) AS 'Total Sales'
 FROM customers
 JOIN employees
-ON customers.SupportRePId = employees.EmployeeId
+ON customers.SupportRepId = employees.EmployeeId
 JOIN invoices
 ON invoices.CustomerId = customers.CustomerId
 WHERE invoices.InvoiceDate LIKE '2009%'
