@@ -95,5 +95,18 @@ ON albums.ArtistId = artists.ArtistId
 ORDER BY 3;
 
 -- Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre.
+SELECT
+   tracks.Name AS 'track',
+   albums.Title AS 'album', 
+   media_types.Name AS 'media type', 
+   genres.Name AS 'genre'
+FROM tracks
+JOIN albums
+ON tracks.AlbumId = albums.AlbumId
+JOIN media_types
+ON tracks.MediaTypeId = media_types.MediaTypeId
+JOIN genres
+ON tracks.GenreId = genres.GenreId;
+
 -- Show the total sales made by each sales agent.
 -- Which sales agent made the most dollars in sales in 2009?
