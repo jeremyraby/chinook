@@ -133,3 +133,4 @@ WHERE invoices.InvoiceDate LIKE '2009%'
 GROUP BY 1
 ORDER BY 2 DESC
 LIMIT 1;
+
