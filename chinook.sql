@@ -49,6 +49,18 @@ ON employees.EmployeeId = customers.SupportRepId
 JOIN invoices
 ON invoices.CustomerId = customers.CustomerId;
 -- Show the Invoice Total, Customer name, Country, and Sales Agent name for all invoices and customers.
+SELECT
+    invoices.InvoiceId AS 'Invoice ID',
+    invoices.Total AS 'Invoice Total',
+    customers.FirstName || ' ' || customers.LastName AS 'Customer',
+    customers.Country AS 'Customer Country',
+    employees.FirstName || ' ' || employees.LastName AS 'Sales Rep'
+FROM customers
+LEFT JOIN invoices
+ON customers.CustomerId = invoices.CustomerId
+LEFT JOIN employees
+ON customers.SupportRepId = employees.EmployeeId
+
 -- How many Invoices were there in 2009?
 -- What are the total sales for 2009?
 -- Write a query that includes the purchased track name with each invoice line ID.
