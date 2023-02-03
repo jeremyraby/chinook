@@ -67,6 +67,10 @@ FROM invoices
 WHERE InvoiceDate LIKE '2009%';
 
 -- What are the total sales for 2009?
+SELECT ROUND(SUM(Total), 2)
+FROM invoices
+WHERE InvoiceDate LIKE '2009%';
+
 -- Write a query that includes the purchased track name with each invoice line ID.
 -- Write a query that includes the purchased track name AND artist name with each invoice line ID.
 -- Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre.
