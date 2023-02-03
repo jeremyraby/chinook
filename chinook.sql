@@ -131,4 +131,5 @@ JOIN invoices
 ON invoices.CustomerId = customers.CustomerId
 WHERE invoices.InvoiceDate LIKE '2009%'
 GROUP BY 1
-ORDER BY 2 DESC;
+ORDER BY 2 DESC
+LIMIT 1;
