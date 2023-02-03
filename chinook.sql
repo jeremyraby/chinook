@@ -72,6 +72,14 @@ FROM invoices
 WHERE InvoiceDate LIKE '2009%';
 
 -- Write a query that includes the purchased track name with each invoice line ID.
+SELECT
+    items.InvoiceLineId,
+    tracks.Name
+FROM invoice_items items
+LEFT JOIN tracks
+ON items.TrackId = tracks.TrackId
+ORDER BY items.InvoiceLineID;
+
 -- Write a query that includes the purchased track name AND artist name with each invoice line ID.
 -- Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre.
 -- Show the total sales made by each sales agent.
